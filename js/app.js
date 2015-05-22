@@ -12,6 +12,12 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
+  	// Calls a new game
+  	$("a.new").click(function(){
+  		newGame();
+  	});
+
+  	
 });
 
 
