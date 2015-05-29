@@ -1,23 +1,31 @@
 
 $(document).ready(function(){
 	
-	/*--- Display information modal box ---*/
+	  // display information modal box 
   	$(".what").click(function(){
     	$(".overlay").fadeIn(1000);
 
   	});
 
-  	/*--- Hide information modal box ---*/
+  	// hide information modal box 
   	$("a.close").click(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
-  	// Calls a new game
+  	// calls a new game
   	$("a.new").click(function(){
   		newGame();
   	});
 
-  	
+    $("#guessButton").click(function(){
+      // note: review purpose of preventDefault();
+      event.preventDefault();
+      guess();
+    })
+
 });
 
 
+
+	// Secret number
+	
