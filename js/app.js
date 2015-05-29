@@ -25,6 +25,22 @@ $(document).ready(function(){
 
 });
 
+function guess() {
+  var guess = $("userGuess").val();
+    // note: review isValidGuess
+    if (!isValidGuess(guess)){
+      userGuess = "";
+      updateDisplay();
+      return;
+    }
+
+    feedback = getFeedback(guess);
+    guessCount++;
+    guessList.push(guess);
+    userGuess = "";
+    updateDisplay();
+  }
+
 
 
 	// Secret number
