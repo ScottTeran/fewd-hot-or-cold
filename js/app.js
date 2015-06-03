@@ -18,17 +18,18 @@ $(document).ready(function(){
   	});
 
     $("#guessButton").click(function(){
-      // note: review purpose of preventDefault();
-      event.preventDefault();
+    // event.preventDefault();
       guess();
     })
 
 });
 
 function guess() {
+    // I'm gonn
   var guess = $("userGuess").val();
-    // note: review isValidGuess
+    // 
     if (!isValidGuess(guess)){
+      // note to self: what is the point of userGuess?
       userGuess = "";
       updateDisplay();
       return;
@@ -43,5 +44,8 @@ function guess() {
 
 
 
-	// Secret number
+	// secret number
+  function secretNum (){
+    return Math.floor((Math.random() * 100) + 1);
+  }
 	
