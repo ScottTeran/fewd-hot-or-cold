@@ -34,9 +34,11 @@ necessary to start a new game. */
 function newGame() {
   // first, run the secret number function and assign the value to secretNum
   secretNum = getSecretNum();
-  feedback = "Make Your Guess!";
   
-
+  feedback = "Make Your Guess!";
+  guessCount = 0;
+  guessList = [];
+  updateDisplay(); 
 
 } 
 
