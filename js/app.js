@@ -24,6 +24,14 @@ $(document).ready(function(){
 
 });
 
+// review global variables... 
+
+var secretNumber;
+var feedback;
+var guessCount;
+var guessList;
+
+
 // NEW GAME
 
 /* When the page loads, JavaScript should start a new game. Since you’ll 
@@ -42,27 +50,12 @@ function newGame() {
 
 } 
 
-// review global variables... 
-
-var secretNumber;
-var feedback;
-var guessCount;
-var guessList;
-
-
-
 // GUESS FUNCTION
 
 function guess() {
-    // take the 
+    // takes the value from the input and assigns it to the variable guess
   var guess = $("userGuess").val();
     // 
-    if (!isValidGuess(guess)){
-      userGuess = "";
-      updateDisplay();
-      return;
-    }
-
     feedback = getFeedback(guess);
     guessCount++;
     guessList.push(guess);
