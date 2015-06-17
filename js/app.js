@@ -21,7 +21,6 @@ $(document).ready(function(){
     // event.preventDefault();
       guess();
     })
-
 });
 
 // review global variables... 
@@ -47,24 +46,36 @@ function newGame() {
   guessCount = 0;
   guessList = [];
   updateDisplay(); 
-
 } 
+
 
 // GUESS FUNCTION
 
 function guess() {
     // takes the value from the input and assigns it to the variable guess
   var guess = $("userGuess").val();
-    // 
-    feedback = getFeedback(guess);
-    guessCount++;
-    guessList.push(guess);
-    userGuess = "";
-    updateDisplay();
-  }
+    
+  feedback = getFeedback(guess);
+  guessCount++;
+  guessList.push(guess);
+  userGuess = "";
+  updateDisplay();
+}
 
 
-	// SECRET NUMBER
+// DISPLAY
+
+function updateDisplay() {
+  $("#feedback").text(feedback);
+  $("#userGuess").val(userGuess);
+  $("#count").text(guessCount);
+  $("guessList").empty();
+  
+}
+
+
+
+// SECRET NUMBER
 
   /* When a new game starts, a secret number between 1 and 100 should be 
   generated that the user will have to guess. You should write a named 
