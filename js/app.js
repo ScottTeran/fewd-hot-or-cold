@@ -23,7 +23,7 @@ $(document).ready(function(){
     })
 });
 
-// review global variables... 
+// review global variables, callbacks, etc.... 
 
 var secretNumber;
 var feedback;
@@ -39,9 +39,7 @@ button, you’ll want to create a newGame function that does everything
 necessary to start a new game. */
 
 function newGame() {
-  // first, run the secret number function and assign the value to secretNum
   secretNum = getSecretNum();
-  
   feedback = "Make Your Guess!";
   guessCount = 0;
   guessList = [];
@@ -52,9 +50,7 @@ function newGame() {
 // GUESS FUNCTION
 
 function guess() {
-    // takes the value from the input and assigns it to the variable guess
   var guess = $("userGuess").val();
-    
   feedback = getFeedback(guess);
   guessCount++;
   guessList.push(guess);
@@ -65,14 +61,22 @@ function guess() {
 
 // DISPLAY
 
+  /* The game should track how many guess the user has made. Feedback about this
+  should appear in span#count (which defaults to 0, when the page loads). */
+
 function updateDisplay() {
   $("#feedback").text(feedback);
   $("#userGuess").val(userGuess);
   $("#count").text(guessCount);
   $("guessList").empty();
-  
-}
 
+  if (guessList.length > 0) {
+    for (var i = 0; i < guessList.length; i++) {
+      var listItem = "<li>" + guessList[i] + "</li>";
+      $("#guessList").append(listItem);
+    }
+  }
+}
 
 
 // SECRET NUMBER
